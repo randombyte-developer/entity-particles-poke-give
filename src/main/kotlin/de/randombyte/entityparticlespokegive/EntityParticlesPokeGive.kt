@@ -70,7 +70,7 @@ class EntityParticlesPokeGive @Inject constructor(
 
     @SubscribeEvent
     fun onPixelmonReceivedEvent(event: PixelmonReceivedEvent) {
-        val particleString = markedPlayers.remove(event.player.uniqueID)?: return
+        val particleString = markedPlayers.remove(event.player.uniqueID) ?: return
         (event.pokemon as DataHolder).tryOffer(ParticleData(particleString, true))
     }
 
